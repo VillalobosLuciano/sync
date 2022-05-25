@@ -121,7 +121,7 @@ export default function Pricing({ products }: Props) {
                   {
                     'border border-pink-500': subscription
                       ? product.name === subscription?.prices?.products?.name
-                      : product.name === 'Freelancer'
+                      : product.name === 'Cloud Sync'
                   }
                 )}
               >
