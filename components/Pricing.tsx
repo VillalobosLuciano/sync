@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-
+import { CheckIcon } from '@heroicons/react/outline';
 import Button from 'components/ui/Button';
 import { postData } from 'utils/helpers';
 import { getStripe } from 'utils/stripe-client';
@@ -11,6 +11,17 @@ import { Price, ProductWithPrice } from 'types';
 interface Props {
   products: ProductWithPrice[];
 }
+
+const pricing = {
+  features: [
+    'Unlimited products',
+    'Unlimited subscribers',
+    'Advanced analytics',
+    '1-hour, dedicated support response time',
+    'Marketing automations',
+    'Custom integrations'
+  ]
+};
 
 type BillingInterval = 'year' | 'month';
 
@@ -67,16 +78,16 @@ export default function Pricing({ products }: Props) {
     );
 
   return (
-    <section className="bg-black">
-      <div className="max-w-7xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Pricing Plans
-          </h1>
-          <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
-          </p>
+    <section className="bg-black lg:pb-20">
+      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 ">
+        <h2 className="text-3xl font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight">
+          Pricing plans for teams of all sizes
+        </h2>
+        <p className="mt-6 max-w-2xl text-xl text-zinc-200">
+          Choose an affordable plan that's packed with the best features for
+          engaging your audience, creating customer loyalty, and driving sales.
+        </p>
+        <div className="lg:flex mt-12 ">
           <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             <button
               onClick={() => setBillingInterval('month')}
@@ -102,8 +113,9 @@ export default function Pricing({ products }: Props) {
             </button>
           </div>
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+        <div className="mt-8 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
           {products.map((product) => {
+            const mostPopular = product.name === 'Cloud Sync';
             const price = product?.prices?.find(
               (price) => price.interval === billingInterval
             );
@@ -117,40 +129,57 @@ export default function Pricing({ products }: Props) {
               <div
                 key={product.id}
                 className={cn(
-                  'rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
+                  'relative p-8 rounded-2xl shadow-sm flex flex-col',
                   {
-                    'border border-[#A9FFF1]': subscription
-                      ? product.name === subscription?.prices?.products?.name
-                      : product.name === 'Cloud Sync'
+                    'border border-[#A9FFF1]': mostPopular,
+                    'border border-[#A9FFF1]/30': !mostPopular
                   }
                 )}
               >
-                <div className="p-6">
-                  <h2 className="text-2xl leading-6 font-semibold text-white">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-semibold text-white">
                     {product.name}
-                  </h2>
-                  <p className="mt-4 text-zinc-300">{product.description}</p>
-                  <p className="mt-8">
-                    <span className="text-5xl font-extrabold white">
+                  </h3>
+                  {mostPopular ? (
+                    <p className="absolute top-0 rounded-lg bg-[#111a19] border border-[#A9FFF1] px-3 py-2 text-xs font-semibold uppercase tracking-wide text-[#A9FFF1] transform -translate-y-1/2">
+                      Most popular
+                    </p>
+                  ) : null}
+                  <p className="mt-4 flex items-baseline text-white">
+                    <span className="text-5xl font-extrabold tracking-tight">
                       {priceString}
                     </span>
-                    <span className="text-base font-medium text-zinc-100">
+                    <span className="ml-1 text-xl font-semibold">
                       /{billingInterval}
                     </span>
                   </p>
-                  <Button
-                    variant="slim"
-                    type="button"
-                    disabled={isLoading}
-                    loading={priceIdLoading === price.id}
-                    onClick={() => handleCheckout(price)}
-                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
-                  >
-                    {product.name === subscription?.prices?.products?.name
-                      ? 'Manage'
-                      : 'Subscribe'}
-                  </Button>
+                  <p className="mt-6 text-zinc-200">{product.description}</p>
+
+                  <ul role="list" className="mt-6 space-y-6">
+                    {pricing.features.map((feature) => (
+                      <li key={feature} className="flex">
+                        <CheckIcon
+                          className="flex-shrink-0 w-6 h-6 text-[#A9FFF1]"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-zinc-200">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
+                <Button
+                  variant="slim"
+                  type="button"
+                  disabled={isLoading}
+                  loading={priceIdLoading === price.id}
+                  onClick={() => handleCheckout(price)}
+                  className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-zinc-900"
+                >
+                  {product.name === subscription?.prices?.products?.name
+                    ? 'Manage'
+                    : 'Subscribe'}
+                </Button>
               </div>
             );
           })}
