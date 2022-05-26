@@ -3,6 +3,7 @@ import Footer from '@/components/ui/Footer';
 import Marquee from '@/components/ui/Marquee';
 import Navbar from '@/components/ui/Navbar/Navbar';
 import Igniter from 'components/icons/Igniter';
+import Image from 'next/image';
 
 export default function index() {
   const brands = [
@@ -47,16 +48,35 @@ export default function index() {
             </div>
           </div>
 
-          <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
+          <div className="hidden lg:block sm:mx-auto sm:max-w-3xl sm:px-6">
             <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-              <div className="relative -mr-40 pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
-                <div className="w-full rounded-md bg-zinc-900/20 shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"></div>
+              <div className="relative sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-10">
+                <div className="flex-col flex absolute py-6 space-y-4">
+                  <div>
+                    <Image
+                      src="https://media0.giphy.com/media/J4yNWuvc2afezrAnQ2/giphy.gif?cid=ecf05e47yrw48kaolspkbbozknyobdwdgfpo2fgd7t0mblk2&rid=giphy.gif&ct=g"
+                      alt="Illustration"
+                      className="rounded-3xl"
+                      width={400}
+                      height={220}
+                    />
+                  </div>
+                  <div className="ml-44">
+                    <Image
+                      src="https://media3.giphy.com/media/hT68WFMsbKBO6c1l2T/giphy.gif?cid=ecf05e47zfmqo04lyea4127t4qchth88crzo23j373d6kly8&rid=giphy.gif&ct=g"
+                      alt="Illustration"
+                      className="rounded-3xl"
+                      width={400}
+                      height={220}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-7xl px-6 pb-16">
+      <div className="mx-auto w-full max-w-7xl px-6 py-16">
         <div className="pb-16 lg:text-center">
           <h2 className="text-base font-semibold uppercase tracking-wide text-[#A9FFF1]">
             Integrations
