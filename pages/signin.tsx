@@ -66,16 +66,16 @@ const SignIn = () => {
       <div className="flex justify-center height-screen-helper">
         <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
           <div className="flex justify-center pb-12 ">
-            <Logo width="64px" height="64px" />
+            <Logo width="112px" height="64px" />
           </div>
           <div className="flex flex-col space-y-4">
             {message.content && (
               <div
                 className={`${
-                  message.type === 'error' ? 'text-pink-500' : 'text-green-500'
+                  message.type === 'error' ? 'text-[#A9FFF1]' : 'text-green-500'
                 } border ${
                   message.type === 'error'
-                    ? 'border-pink-500'
+                    ? 'border-[#A9FFF1]'
                     : 'border-green-500'
                 } p-3`}
               >

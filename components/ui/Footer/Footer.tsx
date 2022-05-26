@@ -1,102 +1,83 @@
 import Link from 'next/link';
 import s from './Footer.module.css';
-
 import Logo from 'components/icons/Logo';
 import GitHub from 'components/icons/GitHub';
+import Igniter from 'components/icons/Igniter';
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-zinc-600 py-12 text-white transition-colors duration-150 bg-zinc-900">
-        <div className="col-span-1 lg:col-span-2">
-          <Link href="/">
-            <a className="flex flex-initial items-center font-bold md:mr-24">
-              <span className="rounded-full border border-zinc-700 mr-2">
-                <Logo />
+    <footer className="border-t border-[#A9FFF1]/30 bg-[#020203] ">
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="text-primary grid grid-cols-1 gap-8 border-b border-[#A9FFF1]/10 py-12 transition-colors duration-150 lg:grid-cols-12">
+          <div className="col-span-1 lg:col-span-2">
+            <Link href="/">
+              <Logo />
+            </Link>
+          </div>
+          <div className="col-span-1 lg:col-span-8">
+            <div className="grid md:grid-flow-col md:grid-cols-3 md:grid-rows-2">
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/">
+                  <a className="text-zinc-200 transition duration-150 ease-in-out hover:text-zinc-100">
+                    Home
+                  </a>
+                </Link>
               </span>
-              <span>ACME</span>
-            </a>
-          </Link>
-        </div>
-        <div className="col-span-1 lg:col-span-2">
-          <ul className="flex flex-initial flex-col md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  About
-                </a>
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  Careers
-                </a>
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  Blog
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="col-span-1 lg:col-span-2">
-          <ul className="flex flex-initial flex-col md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
-              <p className="text-white font-bold hover:text-zinc-200 transition ease-in-out duration-150">
-                LEGAL
-              </p>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  Privacy Policy
-                </a>
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link href="/">
-                <a className="text-white hover:text-zinc-200 transition ease-in-out duration-150">
-                  Terms of Use
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="col-span-1 lg:col-span-6 flex items-start lg:justify-end text-white">
-          <div className="flex space-x-6 items-center h-10">
-            <a
-              aria-label="Github Repository"
-              href="https://github.com/vercel/nextjs-subscription-payments"
-            >
-              <GitHub />
-            </a>
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/pricing">
+                  <a className="text-zinc-200 transition duration-150 ease-in-out hover:text-zinc-100">
+                    Pricing
+                  </a>
+                </Link>
+              </span>
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/terms">
+                  <a className="text-zinc-200 transition duration-150 ease-in-out hover:text-zinc-100">
+                    Terms of Use
+                  </a>
+                </Link>
+              </span>
+              <span className="py-3 md:py-0 md:pb-4">
+                <Link href="/privacy">
+                  <a className="text-zinc-200 transition duration-150 ease-in-out hover:text-zinc-100">
+                    Privacy Policy
+                  </a>
+                </Link>
+              </span>
+            </div>
+          </div>
+          <div className="text-primary col-span-1 flex items-start lg:col-span-2 lg:justify-end">
+            <div className="flex h-10 items-center space-x-6">
+              <a
+                className={s.link}
+                aria-label="Github Repository"
+                href="https://github.com"
+              >
+                <GitHub />
+              </a>
+              {/* <I18nWidget /> */}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="py-12 flex flex-col md:flex-row justify-between items-center space-y-4 bg-zinc-900">
-        <div>
-          <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
-        </div>
-        <div className="flex items-center">
-          <span className="text-white">Crafted by</span>
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
-            <img
-              src="/vercel.svg"
-              alt="Vercel.com Logo"
-              className="inline-block h-6 ml-4 text-white"
-            />
-          </a>
+        <div className="text-accent-6 flex flex-col items-center justify-between space-y-4 pt-6 pb-10 text-sm md:flex-row">
+          <div>
+            <span>&copy; {new Date().getFullYear()} ‣ SYNC. </span>
+          </div>
+          <div className="flex items-center text-sm text-white">
+            <span className="text-white">Created by</span>
+            <a
+              rel="noopener noreferrer"
+              href="https://igniter.studio"
+              aria-label="igniter.studio Link"
+              target="_blank"
+              className="text-white"
+            >
+              <Igniter
+                className="-ml-2 inline-block h-6 text-white"
+                alt="igniter.studio Logo"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

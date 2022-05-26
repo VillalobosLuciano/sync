@@ -1,0 +1,7 @@
+.root {
+  @apply border-t;
+}
+
+.link {
+  @apply transform duration-75 ease-linear;
+}

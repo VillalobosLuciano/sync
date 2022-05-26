@@ -64,10 +64,10 @@ const SignUp = () => {
           {message.content && (
             <div
               className={`${
-                message.type === 'error' ? 'text-pink-500' : 'text-green-500'
+                message.type === 'error' ? 'text-[#A9FFF1]' : 'text-green-500'
               } border ${
                 message.type === 'error'
-                  ? 'border-pink-500'
+                  ? 'border-[#A9FFF1]'
                   : 'border-green-500'
               } p-3`}
             >
