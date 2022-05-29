@@ -1,9 +1,9 @@
 .root {
-  @apply bg-white text-zinc-800 cursor-pointer inline-flex px-10 rounded-sm leading-6  transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-4 border border-transparent items-center;
+  @apply bg-[#A9FFF1]/5 text-zinc-200 cursor-pointer inline-flex px-10 rounded-sm leading-6  transition ease-in-out duration-150 shadow-sm font-semibold text-center justify-center uppercase py-4 border border-[#A9FFF1]/30 items-center;
 }
 
 .root:hover {
-  @apply bg-zinc-800 text-white border border-white;
+  @apply bg-[#A9FFF1]/20 text-[#A9FFF1] border border-[#A9FFF1];
 }
 
 .root:focus {

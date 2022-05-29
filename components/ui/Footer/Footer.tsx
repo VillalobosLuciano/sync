@@ -6,7 +6,7 @@ import Igniter from 'components/icons/Igniter';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#A9FFF1]/30 bg-[#020203] ">
+    <footer className="border-t border-[#A9FFF1]/30">
       <div className="mx-auto w-full max-w-7xl px-6">
         <div className="text-primary grid grid-cols-1 gap-8 border-b border-[#A9FFF1]/10 py-12 transition-colors duration-150 lg:grid-cols-12">
           <div className="col-span-1 lg:col-span-2">

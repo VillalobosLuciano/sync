@@ -58,43 +58,44 @@ export default function Pricing({ products }: Props) {
 
   if (!products.length)
     return (
-      <section className="bg-black">
-        <div className="max-w-7xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center"></div>
-          <p className="text-6xl font-extrabold text-white sm:text-center sm:text-6xl">
-            No subscription pricing plans found. Create them in your{' '}
-            <a
-              className="text-[#A9FFF1] underline"
-              href="https://dashboard.stripe.com/products"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Stripe Dashboard
-            </a>
-            .
-          </p>
-        </div>
+      <section className="max-w-7xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="sm:flex sm:flex-col sm:align-center"></div>
+        <p className="text-6xl font-extrabold text-white sm:text-center sm:text-6xl">
+          No subscription pricing plans found. Create them in your{' '}
+          <a
+            className="text-[#A9FFF1] underline"
+            href="https://dashboard.stripe.com/products"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Stripe Dashboard
+          </a>
+          .
+        </p>
       </section>
     );
 
   return (
-    <section className="bg-black lg:pb-20">
+    <section className="lg:pb-20">
       <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 ">
-        <h2 className="text-3xl font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight">
-          Pricing plans for teams of all sizes
+        <h2 className="text-base font-semibold uppercase tracking-wide text-[#A9FFF1]">
+          Pricing
+        </h2>
+        <h2 className="text-3xl font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight mt-1">
+          Plans for teams of all sizes
         </h2>
         <p className="mt-6 max-w-2xl text-xl text-zinc-200">
           Choose an affordable plan that's packed with the best features for
           engaging your audience, creating customer loyalty, and driving sales.
         </p>
-        <div className="lg:flex mt-12 ">
-          <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
+        <div className="lg:flex mt-12">
+          <div className="relative self-center mt-6 rounded-lg p-0.5 flex sm:mt-8 border border-[#A9FFF1]/30">
             <button
               onClick={() => setBillingInterval('month')}
               type="button"
               className={`${
                 billingInterval === 'month'
-                  ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
+                  ? 'relative w-1/2 bg-[#A9FFF1]/5 border border-[#A9FFF1]/30 shadow-sm text-[#A9FFF1]'
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#A9FFF1] focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
@@ -105,7 +106,7 @@ export default function Pricing({ products }: Props) {
               type="button"
               className={`${
                 billingInterval === 'year'
-                  ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
+                  ? 'relative w-1/2 bg-[#A9FFF1]/5 border border-[#A9FFF1]/30 shadow-sm text-[#A9FFF1]'
                   : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
               } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#A9FFF1] focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
@@ -141,7 +142,7 @@ export default function Pricing({ products }: Props) {
                     {product.name}
                   </h3>
                   {mostPopular ? (
-                    <p className="absolute top-0 rounded-lg bg-[#111a19] border border-[#A9FFF1] px-3 py-2 text-xs font-semibold uppercase tracking-wide text-[#A9FFF1] transform -translate-y-1/2">
+                    <p className="absolute top-0 rounded-lg bg-[#111a19] border border-[#A9FFF1] px-6 py-2 text-xs font-semibold uppercase tracking-wide text-[#A9FFF1] transform -translate-y-1/2">
                       Most popular
                     </p>
                   ) : null}
