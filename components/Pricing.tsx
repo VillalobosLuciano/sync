@@ -138,7 +138,7 @@ export default function Pricing({ products }: Props) {
                 )}
               >
                 <div className="flex-1">
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="text-2xl font-bold text-zinc-200 mt-2">
                     {product.name}
                   </h3>
                   {mostPopular ? (
@@ -147,14 +147,14 @@ export default function Pricing({ products }: Props) {
                     </p>
                   ) : null}
                   <p className="mt-4 flex items-baseline text-white">
-                    <span className="text-5xl font-extrabold tracking-tight">
+                    <span className="text-5xl font-bold tracking-tight">
                       {priceString}
                     </span>
                     <span className="ml-1 text-xl font-semibold">
                       /{billingInterval}
                     </span>
                   </p>
-                  <p className="mt-6 text-zinc-200">{product.description}</p>
+                  <p className="mt-6 text-zinc-300">{product.description}</p>
 
                   <ul role="list" className="mt-6 space-y-6">
                     {pricing.features.map((feature) => (
@@ -163,7 +163,7 @@ export default function Pricing({ products }: Props) {
                           className="flex-shrink-0 w-6 h-6 text-[#A9FFF1]"
                           aria-hidden="true"
                         />
-                        <span className="ml-3 text-zinc-200">{feature}</span>
+                        <span className="ml-3 text-zinc-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
