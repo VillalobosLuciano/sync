@@ -19,6 +19,13 @@ export interface Product {
   metadata?: Stripe.Metadata;
 }
 
+export interface Integration {
+  id: string /* primary key */;
+  name?: string;
+  image?: string;
+  slug?: string;
+}
+
 export interface ProductWithPrice extends Product {
   prices?: Price[];
 }

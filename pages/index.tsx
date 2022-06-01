@@ -1,23 +1,39 @@
-import Github from '@/components/icons/GitHub';
-import Footer from '@/components/ui/Footer';
 import Marquee from '@/components/ui/Marquee';
-import Navbar from '@/components/ui/Navbar/Navbar';
-import Igniter from 'components/icons/Igniter';
+import IntegrationCard from '@/components/ui/IntegrationCard';
+
 import Image from 'next/image';
 
 export default function index() {
-  const brands = [
+  const integrations = [
     {
-      id: 1,
-      name: 'Igniter',
-      url: '',
-      logo: <Igniter />
+      id: '1',
+      name: 'amazon',
+      url: 'asd',
+      image: '/integrations/amazon.svg'
     },
     {
-      id: 2,
-      name: 'Github',
-      url: '',
-      logo: <Github />
+      id: '2',
+      name: 'google',
+      url: 'asdasdasd',
+      image: '/integrations/google.svg'
+    },
+    {
+      id: '3',
+      name: 'legrand',
+      url: 'asdasdasd',
+      image: '/integrations/legrand.svg'
+    },
+    {
+      id: '4',
+      name: 'schneider',
+      url: 'asdasdasd',
+      image: '/integrations/schneider.svg'
+    },
+    {
+      id: '5',
+      name: 'smartThings',
+      url: 'asdasdasd',
+      image: '/integrations/smartThings.svg'
     }
   ];
 
@@ -76,7 +92,7 @@ export default function index() {
           </div>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-7xl px-6 py-16">
+      <div className="mx-auto w-full max-w-7xl px-6 pt-20 pb-40">
         <div className="pb-16 lg:text-center">
           <h2 className="text-base font-semibold uppercase tracking-wide text-[#A9FFF1]">
             Integrations
@@ -89,15 +105,10 @@ export default function index() {
             voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
         </div>
+
         <Marquee>
-          {brands.map((brand) => (
-            <a
-              key={brand.id}
-              href={brand.url}
-              className="ml-4 transition-colors hover:text-zinc-200"
-            >
-              {brand.logo}
-            </a>
+          {integrations.map((integration) => (
+            <IntegrationCard key={integration.id} integration={integration} />
           ))}
         </Marquee>
       </div>
