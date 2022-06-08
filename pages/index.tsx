@@ -2,6 +2,7 @@ import Marquee from '@/components/ui/Marquee';
 import IntegrationCard from '@/components/ui/IntegrationCard';
 
 import Image from 'next/image';
+import Solutions from '../components/ui/Solutions/Solutions';
 
 export default function index() {
   const integrations = [
@@ -92,6 +93,9 @@ export default function index() {
           </div>
         </div>
       </div>
+
+      <Solutions />
+
       <div className="mx-auto w-full max-w-7xl px-6 pt-20 pb-40">
         <div className="pb-16 lg:text-center">
           <h2 className="text-base font-semibold uppercase tracking-wide text-[#A9FFF1]">
