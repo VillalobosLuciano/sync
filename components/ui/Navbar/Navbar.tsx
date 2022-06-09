@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import ProfileDropdown from '../ProfileDropdown/ProfileDropdown';
 
 const Navbar = () => {
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
   const router = useRouter();
 
   console.log('user data', user);
@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link> */}
           </nav>
           <div className="lg:flex flex-1 justify-end space-x-8 hidden">
-            {user ? (
+            {user && !isLoading ? (
               <ProfileDropdown user={user?.email} />
             ) : (
               <>
