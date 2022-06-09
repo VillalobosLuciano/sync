@@ -43,7 +43,7 @@ const Navbar = () => {
             </Link> */}
           </nav>
           <div className="lg:flex flex-1 justify-end space-x-8 hidden">
-            {user && !isLoading ? (
+            {user ? (
               <ProfileDropdown user={user?.email} />
             ) : (
               <>
