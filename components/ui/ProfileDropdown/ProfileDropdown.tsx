@@ -19,7 +19,7 @@ const ProfileDropdown: React.FC<ProfileProps> = ({ user }) => {
     <>
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="flex font-semibold uppercase border-cyan-500/50 hover:border-cyan-500 border items-center transition-colors justify-center w-8 h-8 text-sm text-white bg-black rounded-full hover:bg-cyan-600/20">
+          <Menu.Button className="flex font-semibold uppercase border-[#A9FFF1]/50 hover:border-[#A9FFF1] border-2 items-center transition-colors justify-center w-8 h-8 text-sm text-white bg-black rounded-full hover:bg-[#A9FFF1]/20">
             {user?.charAt(0)}
           </Menu.Button>
         </div>
@@ -33,51 +33,36 @@ const ProfileDropdown: React.FC<ProfileProps> = ({ user }) => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-black ring-1 ring-[#A9FFF1] ring-opacity-5 divide-y divide-[#A9FFF1]/20 focus:outline-none">
             <div className="px-4 py-3">
-              <p className="text-sm">Signed in as</p>
-              <p className="text-sm font-medium text-gray-900 truncate">
-                tom@example.com
-              </p>
+              <p className="text-sm text-zinc-400">Signed in as</p>
+              <p className="text-sm font-medium text-white truncate">{user}</p>
             </div>
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <div
+                    onClick={() => router.push('/account')}
                     className={cn(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
+                      active ? 'bg-zinc-900 text-white' : 'text-zinc-300',
+                      'block px-4 py-2 text-sm cursor-pointer'
                     )}
                   >
                     Account settings
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <div
+                    onClick={() => router.push('/')}
                     className={cn(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
+                      active ? 'bg-zinc-900 text-white' : 'text-zinc-300',
+                      'block px-4 py-2 text-sm cursor-pointer'
                     )}
                   >
                     Support
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={cn(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    License
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
             </div>
@@ -89,7 +74,7 @@ const ProfileDropdown: React.FC<ProfileProps> = ({ user }) => {
                       type="submit"
                       onClick={handleSignOut}
                       className={cn(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        active ? 'bg-zinc-900 text-white' : 'text-zinc-300',
                         'block w-full text-left px-4 py-2 text-sm'
                       )}
                     >

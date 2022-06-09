@@ -46,9 +46,11 @@ const Navbar = () => {
             {user ? (
               <ProfileDropdown user={user?.email} />
             ) : (
-              <Link href="/signin">
-                <a className={s.link}>Sign in</a>
-              </Link>
+              <>
+                <Link href="/signin">
+                  <a className={s.link}>Sign in</a>
+                </Link>
+              </>
             )}
           </div>
         </div>
