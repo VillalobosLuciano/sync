@@ -47,11 +47,11 @@ export const SolutionRight: React.FC<{ progress: number }> = ({
       className={cn(
         'flex flex-1 lg:items-center justify-center h-screen transition-colors',
         {
-          'bg-gradient-radial from-[#A9FFF1]/20 via-[#A9FFF1]/20 to-black':
+          'lg:bg-gradient-to-r bg-gradient-to-b from-black via-[#A9FFF1]/5 to-[#A9FFF1]/20':
             currentTile >= 0 && currentTile <= 0.85,
-          'bg-gradient-radial from-purple-500/20 via-purple-500/20 to-black':
+          'lg:bg-gradient-to-r bg-gradient-to-b from-black via-purple-500/5 to-purple-500/20':
             currentTile >= 1 && currentTile <= 1.85,
-          'bg-gradient-radial from-orange-500/20 via-orange-500/20 to-black':
+          'lg:bg-gradient-to-r bg-gradient-to-b from-black via-orange-500/5 to-orange-500/20':
             currentTile >= 2
         }
       )}
