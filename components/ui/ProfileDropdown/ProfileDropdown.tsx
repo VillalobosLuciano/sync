@@ -1,13 +1,20 @@
 import React, { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
 import cn from 'clsx';
+import { useRouter } from 'next/router';
 
 interface ProfileProps {
   user?: string;
 }
 
 const ProfileDropdown: React.FC<ProfileProps> = ({ user }) => {
+  const router = useRouter();
+
+  const handleSignOut = (e: any) => {
+    e.preventDefault();
+    router.push('/api/auth/logout');
+  };
+
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">
@@ -80,6 +87,7 @@ const ProfileDropdown: React.FC<ProfileProps> = ({ user }) => {
                   {({ active }) => (
                     <button
                       type="submit"
+                      onClick={handleSignOut}
                       className={cn(
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block w-full text-left px-4 py-2 text-sm'

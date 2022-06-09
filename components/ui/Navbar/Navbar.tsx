@@ -44,15 +44,12 @@ const Navbar = () => {
           </nav>
           <div className="lg:flex flex-1 justify-end space-x-8 hidden">
             {user ? (
-              <Link href="/api/auth/logout">
-                <a className={s.link}>Sign out</a>
-              </Link>
+              <ProfileDropdown user={user?.email} />
             ) : (
               <Link href="/signin">
                 <a className={s.link}>Sign in</a>
               </Link>
             )}
-            <ProfileDropdown user={user?.email} />
           </div>
         </div>
       </div>
