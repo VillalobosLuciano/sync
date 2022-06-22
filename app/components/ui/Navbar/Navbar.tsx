@@ -40,7 +40,10 @@ const Navbar = () => {
                 <Link href="/signin">
                   <a className={s.link}>Log in</a>
                 </Link>
-                <button className="bg-[#A9FFF1]/10 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-[#A9FFF1]">
+                <button
+                  onClick={() => router.push('/get-started')}
+                  className="bg-[#A9FFF1]/10 px-5 py-3 text-xs font-semibold uppercase border transition-colors border-transparent hover:border-[#A9FFF1]/50 tracking-wide text-[#A9FFF1]"
+                >
                   Get started
                 </button>
               </>
