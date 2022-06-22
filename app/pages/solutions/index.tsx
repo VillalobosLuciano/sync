@@ -3,9 +3,9 @@ import SmartSolutions from '../../components/SmartSolutions';
 import { getClient, overlayDrafts } from '../../lib/sanity.server';
 import { indexQuery } from '../../lib/queries';
 
-export default function Index({ solutions, preview }: any) {
+export default function Index({ solutions }: any) {
   return (
-    <div preview={preview}>
+    <div>
       <Head>
         <title>Smart Home Solutions</title>
         <meta name="description" content="Smart Home Solutions" />
