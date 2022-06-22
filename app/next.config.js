@@ -5,7 +5,8 @@ module.exports = {
       'media0.giphy.com',
       'media3.giphy.com',
       'media1.giphy.com',
-      'images.unsplash.com'
+      'images.unsplash.com',
+      'cdn.sanity.io'
     ]
   }
 };

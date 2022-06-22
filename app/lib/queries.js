@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-const serviceFields = groq`
+const solutionFields = groq`
   _id,
   name,
   title,
@@ -11,28 +11,28 @@ const serviceFields = groq`
 `;
 
 export const indexQuery = groq`
-*[_type == "service"] | order(date desc, _updatedAt desc) {
-  ${serviceFields}
+*[_type == "solution"] | order(date desc, _updatedAt desc) {
+  ${solutionFields}
 }`;
 
-export const serviceQuery = groq`
+export const solutionQuery = groq`
 {
-  "service": *[_type == "service" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "solution": *[_type == "solution" && slug.current == $slug] | order(_updatedAt desc) [0] {
     content,
-    ${serviceFields}
+    ${solutionFields}
   },
-  "moreServices": *[_type == "service" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+  "moreSolutions": *[_type == "solution" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
     content,
-    ${serviceFields}
+    ${solutionFields}
   }
 }`;
 
-export const serviceSlugsQuery = groq`
-*[_type == "service" && defined(slug.current)][].slug.current
+export const solutionSlugsQuery = groq`
+*[_type == "solution" && defined(slug.current)][].slug.current
 `;
 
-export const serviceBySlugQuery = groq`
-*[_type == "service" && slug.current == $slug][0] {
-  ${serviceFields}
+export const solutionBySlugQuery = groq`
+*[_type == "solution" && slug.current == $slug][0] {
+  ${solutionFields}
 }
 `;
