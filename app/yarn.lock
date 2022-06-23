@@ -140,6 +140,14 @@
     "@types/react" "^17.0.42"
     "rxjs" "^6.5.3"
 
+"@sanity/webhook@^1.0.2":
+  "integrity" "sha512-WV31Y8XNKOULoYTgKe3BF5ErVDD8XlS81EcRjj0kNOKuPrVfHDzxwymop4HNTGt6vxrVnTTAfR/XoWL3jFeC5g=="
+  "resolved" "https://registry.npmjs.org/@sanity/webhook/-/webhook-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "base64url" "^3.0.1"
+    "tslib" "^2.3.1"
+
 "@stripe/stripe-js@1.22.0":
   "integrity" "sha512-fm8TR8r4LwbXgBIYdPmeMjJJkxxFC66tvoliNnmXOpUgZSgQKoNPW3ON0ZphZIiif1oqWNhAaSrr7tOvGu+AFg=="
   "resolved" "https://registry.npmjs.org/@stripe/stripe-js/-/stripe-js-1.22.0.tgz"
@@ -280,6 +288,11 @@
     "normalize-range" "^0.1.2"
     "picocolors" "^1.0.0"
     "postcss-value-parser" "^4.2.0"
+
+"base64url@^3.0.1":
+  "integrity" "sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A=="
+  "resolved" "https://registry.npmjs.org/base64url/-/base64url-3.0.1.tgz"
+  "version" "3.0.1"
 
 "binary-extensions@^2.0.0":
   "integrity" "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA=="

@@ -1,5 +1,5 @@
 import { isValidRequest } from '@sanity/webhook';
-import { sanityClient } from '../../lib/sanity.server';
+import { sanityClient } from '../../../lib/sanity.server';
 import { groq } from 'next-sanity';
 
 // const AUTHOR_UPDATED_QUERY = groq`

@@ -1,5 +1,5 @@
-import { solutionBySlugQuery } from '../../lib/queries';
-import { previewClient } from '../../lib/sanity.server';
+import { solutionBySlugQuery } from '../../../lib/queries';
+import { previewClient } from '../../../lib/sanity.server';
 
 export default async function preview(req, res) {
   // Check the secret and next parameters

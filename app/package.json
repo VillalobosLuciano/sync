@@ -13,6 +13,7 @@
     "@heroicons/react": "^1.0.6",
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
+    "@sanity/webhook": "^1.0.2",
     "@stripe/stripe-js": "1.22.0",
     "@supabase/supabase-auth-helpers": "^1.4.2",
     "classnames": "2.3.1",
