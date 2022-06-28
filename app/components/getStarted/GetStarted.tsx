@@ -10,7 +10,7 @@ export const GetStartedContainer: React.FC = ({ children }) => {
 
 export const LeftPanel: React.FC = ({ children }) => {
   return (
-    <div className="flex flex-col items-center lg:col-span-3 justify-center text-3xl lg:text-4xl h-[30vh] lg:h-auto bg-cyan-500/10">
+    <div className="flex flex-col items-center lg:col-span-3 justify-center text-3xl lg:text-4xl h-[25vh] lg:h-auto bg-cyan-500/10">
       {children}
     </div>
   );
@@ -18,7 +18,7 @@ export const LeftPanel: React.FC = ({ children }) => {
 
 export const RightPanel: React.FC = ({ children }) => {
   return (
-    <div className="flex flex-1 h-[70vh] lg:h-auto lg:col-span-2 px-6 lg:px-12">
+    <div className="flex flex-1 h-[75vh] lg:h-auto lg:col-span-2 px-6 lg:px-12">
       {children}
     </div>
   );
