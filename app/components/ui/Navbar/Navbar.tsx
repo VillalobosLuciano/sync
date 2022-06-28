@@ -27,7 +27,6 @@ const Navbar = () => {
 
           <nav className="">
             <ActiveLink href="/Platform">Platform</ActiveLink>
-            <ActiveLink href="/Platform">Devices</ActiveLink>
             <ActiveLink href="/solutions">Solutions</ActiveLink>
             <ActiveLink href="/Resources">Resources</ActiveLink>
             <ActiveLink href="/pricing">Pricing</ActiveLink>

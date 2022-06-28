@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import cn from 'clsx';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { CheckIcon } from '@heroicons/react/outline';
@@ -85,8 +85,9 @@ export default function Pricing({ products }: Props) {
           Plans for teams of all sizes
         </h2>
         <p className="mt-6 max-w-2xl text-xl text-zinc-200">
-          Choose an affordable plan that's packed with the best features for
-          engaging your audience, creating customer loyalty, and driving sales.
+          Choose an affordable plan that&apos;s packed with the best features
+          for engaging your audience, creating customer loyalty, and driving
+          sales.
         </p>
         <div className="lg:flex mt-12">
           <div className="relative self-center mt-6 rounded-lg p-0.5 flex sm:mt-8 border border-[#A9FFF1]/30">

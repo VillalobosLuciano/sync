@@ -10,7 +10,7 @@ import {
 import Container from '../../components/Container';
 import ProseableText from '../../components/ProseableText';
 
-export default function solution({ data = {}, preview }) {
+export default function Solution({ data = {}, preview }) {
   const router = useRouter();
 
   const slug = data?.solution?.slug;

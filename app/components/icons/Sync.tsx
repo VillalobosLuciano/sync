@@ -18,13 +18,13 @@ const Sync = ({ className = '', ...props }) => (
       <path
         d="M254.782 240.256 47.514 190.991 193.812 36.124l60.97 204.132Z"
         stroke="#A9FFF1"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </g>
     <path
       d="M63.822 185.632 210.212 33.246l58.775 202.972-205.166-50.586Z"
       stroke="#A9FFF1"
-      stroke-width="3"
+      strokeWidth="3"
     />
     <defs>
       <filter
@@ -34,9 +34,9 @@ const Sync = ({ className = '', ...props }) => (
         width="218.746"
         height="215.316"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
         <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_2_6" />
       </filter>
@@ -47,9 +47,9 @@ const Sync = ({ className = '', ...props }) => (
         width="218.638"
         height="215.451"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
         <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_2_6" />
       </filter>
