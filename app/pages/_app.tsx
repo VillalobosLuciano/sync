@@ -18,7 +18,6 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
   }, []);
 
   const { pathname } = useRouter();
-  console.log(pathname);
   return (
     <div className="bg-black">
       <UserProvider supabaseClient={supabaseClient}>

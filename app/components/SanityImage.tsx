@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import clsx from "clsx";
-import imageUrlBuilder from "@sanity/image-url";
-import { sanityClient } from "../lib/sanity.server";
-import { urlForImage } from "../lib/sanity";
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import clsx from 'clsx';
+import imageUrlBuilder from '@sanity/image-url';
+import { sanityClient } from '../lib/sanity.server';
+import { urlForImage } from '../lib/sanity';
 
 // const builder = imageUrlBuilder(sanityClient);
 
@@ -13,20 +13,20 @@ import { urlForImage } from "../lib/sanity";
 
 const filters = [
   {
-    name: "blur",
-    loading: "blur-2xl scale-110",
-    loaded: "blur-0 scale-100",
+    name: 'blur',
+    loading: 'blur-2xl scale-110',
+    loaded: 'blur-0 scale-100'
   },
   {
-    name: "grayscale",
-    loading: "grayscale blur-2xl scale-110",
-    loaded: "grayscale-0 blur-0 scale-100",
+    name: 'grayscale',
+    loading: 'grayscale blur-2xl scale-110',
+    loaded: 'grayscale-0 blur-0 scale-100'
   },
   {
-    name: "hue-rotate",
-    loading: "hue-rotate-90 blur-2xl scale-110",
-    loaded: "hue-rotate-0 blur-0 scale-100",
-  },
+    name: 'hue-rotate',
+    loading: 'hue-rotate-90 blur-2xl scale-110',
+    loaded: 'hue-rotate-0 blur-0 scale-100'
+  }
 ];
 
 export default function SanityImage(props: any) {
@@ -47,14 +47,14 @@ export default function SanityImage(props: any) {
         src={urlForImage(props.src)
           .width(props.width)
           .height(props.height)
-          .auto("format")
+          .auto('format')
           .url()}
         alt={props.alt}
         className={clsx(
-          "rounded-t-lg object-fill duration-300 ease-in-out",
+          'rounded-t-lg object-fill duration-300 ease-in-out',
           isLoading ? selectedFilter.loading : selectedFilter.loaded
         )}
-        loading={isLoading ? "eager" : "lazy"}
+        loading={isLoading ? 'eager' : 'lazy'}
         onLoadingComplete={() => setLoading(false)}
       />
     </>
