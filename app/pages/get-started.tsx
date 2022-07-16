@@ -13,10 +13,30 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 import Igniter from 'components/icons/Igniter';
+import { useUser } from '@supabase/supabase-auth-helpers/react';
+import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
+import { Provider } from '@supabase/supabase-js';
+import GitHub from '@/components/icons/GitHub';
+import Button from '@/components/ui/Button';
 
 export default function GetStarted() {
   const router = useRouter();
+  const { user } = useUser();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ type?: string; content?: string }>({
+    type: '',
+    content: ''
+  });
+
+  const handleOAuthSignIn = async (provider: Provider) => {
+    setLoading(true);
+    const { error } = await supabaseClient.auth.signIn({ provider });
+    if (error) {
+      setMessage({ type: 'error', content: error.message });
+    }
+    setLoading(false);
+  };
 
   const movePrev = () => {
     if (currentSlide > 0) {
@@ -59,11 +79,11 @@ export default function GetStarted() {
             <div className="pt-8 lg:pt-28 flex flex-col">
               <Logo className="w-16 h-10 lg:w-[90px]" />
 
-              <div className="lg:pt-20 mb-auto">
+              <div className="lg:pt-14 mb-auto">
                 <label className="uppercase text-sm font-semibold text-zinc-300">
                   Get started with Sync Homes
                 </label>
-                <div className="font-bold text-2xl md:text-4xl text-white">
+                <div className="">
                   {currentSlide === 0 && (
                     <TextContent>
                       <p>
@@ -92,10 +112,45 @@ export default function GetStarted() {
                     </TextContent>
                   )}
                   {currentSlide === 3 && (
-                    <TextContent>
-                      <p>login comparito, esa es la wea...</p>
-                      <p className="pt-8">Legal.</p>
-                    </TextContent>
+                    <div>
+                      <TextContent>
+                        <p>Learn the basics.</p>
+                      </TextContent>
+                      <p className="pt-4 text-zinc-200">
+                        We’ll walk you through setting up Studio, publishing
+                        your content, and connecting a frontend. It’s quick and
+                        free.
+                        <p className="pt-2">Simply sign up to continue.</p>
+                      </p>
+                      <div className="flex flex-col pt-12">
+                        <div className="w-80">
+                          <Button
+                            variant="slim"
+                            type="submit"
+                            disabled={loading}
+                            onClick={() => handleOAuthSignIn('github')}
+                          >
+                            <GitHub />
+                            <span className="ml-2">Continue with GitHub</span>
+                          </Button>
+                        </div>
+                        <Link href="/signup">
+                          <a className="text-[#A9FFF1] hover:text-[#A9FFF1]/80 transition-colors pt-2.5">
+                            Sign up with email
+                          </a>
+                        </Link>
+                      </div>
+                      <div className="flex pt-14">
+                        <p className="text-zinc-200">
+                          Already have an account?
+                        </p>
+                        <Link href="/signin">
+                          <a className="text-[#A9FFF1] hover:text-[#A9FFF1]/80 transition-colors ml-2">
+                            Sign in
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
@@ -149,5 +204,11 @@ export default function GetStarted() {
 }
 
 export const TextContent: React.FC = ({ children }) => {
-  return <p className="pt-8 lg:pt-12">{children}</p>;
+  return (
+    <div>
+      <p className="font-bold text-2xl md:text-4xl text-white pt-8">
+        {children}
+      </p>
+    </div>
+  );
 };
