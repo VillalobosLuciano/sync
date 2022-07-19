@@ -53,6 +53,13 @@ export default {
       name: "coverImage",
       title: "Cover Image",
       type: "image",
+      options: {
+        metadata: [
+          "blurhash", // Default: included
+          "lqip", // Default: included
+          "palette", // Default: included
+        ],
+      },
     },
     {
       name: "date",

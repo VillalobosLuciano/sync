@@ -6,7 +6,10 @@ const solutionFields = groq`
   title,
   date,
   excerpt,
-  coverImage,
+  coverImage{
+    ..., // Get all information
+    "lqip": asset->metadata.lqip // Pull lqip from metadata on the asset
+  },
   "slug": slug.current,
 `;
 

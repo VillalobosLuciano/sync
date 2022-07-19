@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import SanityImage from './SanityImage';
+import Image from 'next/image';
+import { urlForImage } from '../lib/sanity';
 
 export default function SmartSolutionCard({
   slug,
@@ -10,6 +12,7 @@ export default function SmartSolutionCard({
   _id
 }: any) {
   const router = useRouter();
+  // console.log('metadata', coverImage.lqip);
 
   return (
     <div
@@ -18,7 +21,14 @@ export default function SmartSolutionCard({
       className="group cursor-pointer rounded-lg border border-orange-500/20"
     >
       <div className="relative h-48 w-full overflow-hidden border-b border-orange-500/20 transition group-hover:opacity-75 sm:h-52">
-        <SanityImage filter="blur" src={coverImage} layout="fill" />
+        {/* <SanityImage filter="blur" src={coverImage} layout="fill" /> */}
+        <Image
+          alt="Mountains"
+          src={urlForImage(coverImage).url()}
+          placeholder="blur"
+          blurDataURL={coverImage.lqip}
+          layout="fill"
+        />
       </div>
       <div className="flex pl-5">
         <h3 className="mt-3 bg-gradient-to-br from-[#792300] to-[#F37000] bg-clip-text text-base font-medium text-transparent">
