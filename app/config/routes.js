@@ -1,7 +1,7 @@
 const Routes = {
   platform: {
     label: 'Platform',
-    path: '/'
+    path: '/platform'
   },
   solutions: {
     label: 'Solutions',

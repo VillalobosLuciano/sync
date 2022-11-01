@@ -44,7 +44,7 @@ const Solutions = () => (
             <SolutionLeft progress={progress}>
               <h1>Spatial Audio</h1>
               <div className="text-4xl md:text-5xl font-semibold tracking-tight">
-                <SolutionLink href="">Dolby Atmos</SolutionLink>
+                <SolutionLink href="">Dolby Atmos SS</SolutionLink>
               </div>
             </SolutionLeft>
             <SolutionRight progress={progress}>

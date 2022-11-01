@@ -102,9 +102,9 @@ const Navbar = () => {
             </Link>
           </div>
           <nav className="">
-            <ActiveLink href="/Platform">Platform</ActiveLink>
+            <ActiveLink href="/platform">Platform</ActiveLink>
             <ActiveLink href="/solutions">Solutions</ActiveLink>
-            <ActiveLink href="/Resources">Resources</ActiveLink>
+            <ActiveLink href="/resources">Resources</ActiveLink>
             <ActiveLink href="/pricing">Pricing</ActiveLink>
           </nav>
           <div className="lg:flex flex-1 justify-end space-x-6 hidden">

@@ -12,7 +12,6 @@ export default function SmartSolutionCard({
   _id
 }: any) {
   const router = useRouter();
-  // console.log('metadata', coverImage.lqip);
 
   return (
     <div
